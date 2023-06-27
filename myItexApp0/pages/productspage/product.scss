@@ -1,0 +1,637 @@
+@mixin flex($align, $justify, $gap, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+.dash-body {
+  background-color: #fafbff;
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Inter";
+  font-style: normal;
+  line-height: 32px;
+  .nav-container {
+    width: 90px;
+    nav {
+      ul {
+        li:nth-child(n + 2) {
+          div {
+            width: 40%;
+          }
+          .elements {
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
+  .nav-big-container {
+    width: 300px;
+    transform: translateX(-380px);
+    nav {
+      ul {
+        li:nth-child(n + 2) {
+          div {
+            width: 20%;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-container,
+  .nav-big-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 780px;
+    background-color: #fff;
+    box-shadow: 0px 2px 36px rgba(0, 0, 0, 0.06);
+    border-radius: 0px 30px 30px 0px;
+    @include flex(flex-start, flex-end, none, none);
+    z-index: 1000;
+    nav {
+      width: 100%;
+      height: 95%;
+      margin-top: 10px;
+      transition: all 0.7s ease-in-out;
+
+      ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0;
+        @include flex(flex-end, center, 5px, column);
+        width: 100%;
+        height: 100%;
+        li:nth-child(1) {
+          width: 100%;
+          height: 50px;
+          @include flex(center, center, none, none);
+          margin-bottom: 30px;
+          h1 {
+            font-weight: 900;
+            font-size: 45px;
+          }
+        }
+        li:nth-child(n + 2) {
+          width: 100%;
+          height: 50px;
+          cursor: pointer;
+          @include flex(center, space-between, none, none);
+          transition: all 0.6s ease-in-out;
+          div {
+            height: 100%;
+          }
+          .elements {
+            width: 80%;
+            height: 35px;
+            @include flex(center, flex-start, 12.5px, none);
+            h3 {
+              font-weight: 400;
+              font-size: 16px;
+            }
+          }
+          span {
+            display: inline-block;
+            width: 5px;
+            height: 35px;
+            background-color: #74bf90;
+            border-radius: 30px;
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  .dash-content {
+    width: 1446px;
+    min-height: 100vh;
+    margin-left: 90px;
+    overflow: auto;
+    background-color: #fafbff;
+    z-index: 5;
+    .top-container {
+      height: 90px;
+      position: relative;
+      @include flex(center, space-between, none, none);
+      padding: 0px 80px 0px 40px;
+      margin-top: 20px;
+      .delete-container {
+        position: absolute;
+        top: -145px;
+        left: calc(50% - 250px);
+        width: 350px;
+        height: 100px;
+        padding: 10px;
+        background: #ffffff;
+        color: #163046;
+        box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.08);
+        border-radius: 5px;
+        @include flex(center, flex-start, 12.5px, column);
+        transition: all 0.5s ease-in-out;
+        button {
+          width: 140px;
+          height: 40px;
+          border-radius: 7px;
+          cursor: pointer;
+          background: #133b5c;
+          color: #ffffff;
+          &:hover {
+            border: 2px solid #133b5c;
+            background: #ffffff;
+            color: #163046;
+          }
+        }
+      }
+      .main {
+        h2 {
+          font-weight: 600;
+          font-size: 26px;
+          margin: 0;
+        }
+        label {
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 18px;
+          letter-spacing: 0.05em;
+          color: #7d7d7d;
+        }
+      }
+      span {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        background-color: #133b5c;
+        @include flex(center, center, none, none);
+      }
+      .acc-display {
+        @include flex(center, center, 35px, none);
+        div {
+          @include flex(center, center, 10px, none);
+          h3 {
+            font-weight: 400;
+            font-size: 16px;
+          }
+        }
+        .img {
+          cursor: pointer;
+          transform: rotate(180deg);
+          transition: all 0.5s ease-in-out;
+        }
+      }
+    }
+    .top-label-container {
+      height: 90px;
+      @include flex(center, space-between, none, none);
+      padding: 0px 40px 0px 40px;
+      .dayLabels {
+        width: 30%;
+        height: 45px;
+        @include flex(center, space-between, none, none);
+        span {
+          padding: 5px 10px;
+          label {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 13px;
+            letter-spacing: 0.05em;
+            color: #7d7d7d;
+            cursor: pointer;
+          }
+        }
+      }
+      .period-button-label {
+        width: 40%;
+        height: 45px;
+        @include flex(center, space-evenly, none, none);
+        input[type="date"] {
+          width: 120px;
+          height: 25px;
+          padding: 5px;
+          background: #ffffff;
+          border: 0.5px solid rgba(72, 72, 72, 0.2);
+          border-radius: 5px;
+          text-align: center;
+          color: #7d7d7d;
+        }
+        label {
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 15px;
+          color: #7d7d7d;
+        }
+        button:nth-last-child(2) {
+          width: 100px;
+          background: #133b5c;
+          border-radius: 7px;
+          padding: 10px 15px;
+          color: #fff;
+          @include flex(center, space-evenly, none, none);
+          cursor: pointer;
+          margin-left: 35px;
+        }
+        button:nth-last-child(1) {
+          width: 90px;
+          background: inherit;
+          border: 2px solid #133b5c;
+          border-radius: 7px;
+          padding: 10px 15px;
+          color: #133b5c;
+          @include flex(center, space-evenly, none, none);
+          cursor: pointer;
+        }
+      }
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .display-containers {
+      height: 400px;
+      @include flex(center, flex-start, 125px, none);
+      padding: 0px 40px 0px 40px;
+      .container {
+        width: 600px;
+        height: 375px;
+        @include flex(flex-start, none, 10px, column);
+        .first-div {
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 18px;
+          letter-spacing: 0.05em;
+          color: #14181c;
+          @include flex(center, none, 10px, none);
+          label {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 0.05em;
+            color: rgba(20, 24, 28, 0.7);
+          }
+        }
+        .second-div {
+          width: 100%;
+          height: 90%;
+          background-color: #fcfeff;
+          box-shadow: 6px 6px 30px rgba(125, 153, 180, 0.2);
+          border-radius: 14px;
+          @include flex(center, flex-start, 20px, column);
+          h4 {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 18px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.05em;
+            margin: 10px 0px 0px 0px;
+            color: #14181c;
+          }
+          h3 {
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 36px;
+            color: #133b5c;
+            margin: 0px;
+          }
+          label {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            letter-spacing: 0.05em;
+            color: rgba(112, 112, 112, 0.7);
+          }
+          .inside-div {
+            width: 100%;
+            @include flex(center, space-evenly, none, row);
+            .success-div {
+              width: 40%;
+              height: 120px;
+              @include flex(center, space-evenly, none, column);
+              h4 {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 15px;
+                letter-spacing: 0.05em;
+                color: #14181c;
+                margin: 0px;
+              }
+              h3 {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                color: #229654;
+                display: flex;
+                align-items: center;
+                margin: 0px;
+                svg {
+                  width: 12px;
+                  path {
+                    fill: #229654;
+                  }
+                }
+              }
+              span {
+                background: rgba(34, 150, 84, 0.06);
+                border-radius: 4px;
+                padding: 5px 7.5px;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 12px;
+                display: flex;
+                align-items: center;
+                color: #229654;
+              }
+            }
+            .mid-div {
+              width: 5%;
+              height: 120px;
+              @include flex(center, space-evenly, none, column);
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 15px;
+              letter-spacing: 0.05em;
+              color: #133b5c;
+              span {
+                width: 1%;
+                height: 87%;
+                background-color: #133b5c;
+              }
+            }
+            .fail-div {
+              width: 40%;
+              height: 120px;
+              @include flex(center, space-evenly, none, column);
+              h4 {
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 15px;
+                letter-spacing: 0.05em;
+                color: #14181c;
+                margin: 0px;
+              }
+              h3 {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                color: #b60808;
+                display: flex;
+                align-items: center;
+                margin: 0px;
+                svg {
+                  width: 12px;
+                  path {
+                    fill: #b60808;
+                  }
+                }
+              }
+              span {
+                background: rgba(182, 8, 8, 0.06);
+                border-radius: 4px;
+                padding: 5px 7.5px;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 12px;
+                display: flex;
+                align-items: center;
+                color: #b60808;
+              }
+            }
+          }
+          .last-div {
+            @include flex(center, center, 10px, column);
+            align-self: flex-end;
+            margin-right: 40px;
+            h4 {
+              font-weight: 500;
+              font-size: 12px;
+              line-height: 15px;
+              letter-spacing: 0.05em;
+              color: #14181c;
+              margin: 0px;
+            }
+            label {
+              font-weight: 400;
+              font-size: 10px;
+              line-height: 12px;
+              color: #b60808;
+            }
+          }
+        }
+      }
+    }
+    .mcash-container {
+      height: max-content;
+      @include flex(space-around, center, none, column);
+      margin-top: 15px;
+      .status-container {
+        height: 110px;
+        @include flex(center, flex-start, 40px, row);
+        padding: 0px 0px 0px 40px;
+        .transaction {
+          width: max-content;
+          padding: 10px 25px;
+          background: #ffffff;
+          box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.08);
+          border-radius: 5px;
+          @include flex(center, center, 40px, row);
+          div {
+            @include flex(flex-end, center, none, column);
+            h3 {
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 22px;
+              color: #171717;
+              @include flex(center, center, 2px, row);
+              svg {
+                width: 16px;
+              }
+            }
+            label {
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 15px;
+              color: #666666;
+            }
+          }
+        }
+      }
+      .mcash-labels {
+        height: 100px;
+        @include flex(center, space-between, none, row);
+        padding: 0px 65px 0px 40px;
+        .noname {
+          width: max-content;
+          height: 60px;
+          @include flex(center, flex-start, 30px, row);
+          .search {
+            position: relative;
+            input[type="text"] {
+              width: 350px;
+              height: 40px;
+              background: #ffffff;
+              border: 0.5px solid rgba(72, 72, 72, 0.2);
+              border-radius: 7px;
+              padding-left: 30px;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 17px;
+              color: rgba(23, 23, 23, 0.5);
+            }
+            svg {
+              position: absolute;
+              top: 12.5px;
+              left: 10px;
+              path {
+                stroke: rgba(23, 23, 23, 0.5);
+              }
+            }
+          }
+        }
+        .button-containers {
+          @include flex(center, flex-start, 20px, row);
+          a {
+            text-decoration: none;
+            color: #133b5c;
+          }
+          .button {
+            width: 140px;
+            height: 40px;
+            border-radius: 7px;
+            cursor: pointer;
+            @include flex(center, center, 5px, none);
+          }
+          .button:nth-child(odd) {
+            border: 2px solid #133b5c;
+            background: #ffffff;
+          }
+          .button:nth-child(even) {
+            background: #133b5c;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+
+    .table-containers {
+      width: 1344px;
+      height: 460px;
+      margin: 0px 40px 0px 40px;
+      background: #ffffff;
+      border: 0.5px solid rgba(72, 72, 72, 0.2);
+      border-radius: 7px;
+      position: relative;
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        thead {
+          th {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            height: 40px;
+            color: #000000;
+          }
+        }
+        .table-error {
+          position: absolute;
+          top: 35%;
+          left: 40%;
+
+          margin: 0;
+          td {
+            width: 200px;
+            height: 150px;
+            @include flex(center, center, none, column);
+          }
+        }
+        tbody {
+          height: 100%;
+          td {
+            text-align: center;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #666666;
+            height: 40px;
+            input[type="checkbox"] {
+              width: 17.5px;
+              height: 17.5px;
+            }
+            select {
+              width: 85px;
+              height: 25px;
+              border-radius: 5px;
+              padding: 3px;
+              text-align: center;
+            }
+          }
+          tr:nth-child(even) {
+            background-color: rgba(26, 72, 109, 0.05);
+          }
+        }
+      }
+    }
+
+    .page {
+      margin: 10px 40px 20px 40px;
+      .pagination-container {
+        @include flex(center, flex-start, 30px, row);
+        label {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 12px;
+          color: rgba(19, 59, 92, 0.5);
+          cursor: pointer;
+        }
+        .book {
+          width: 180px;
+          @include flex(center, space-between, none, row);
+          span {
+            background: rgba(26, 72, 109, 0.07);
+            border-radius: 3px;
+            width: 30px;
+            height: 30px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            @include flex(center, center, none, none);
+            color: #171717;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+.svg-styled {
+  path {
+    stroke: #74bf90;
+  }
+}
+
+.success,
+.error {
+  color: #fff;
+  padding: 5px;
+  // margin: 5px 0 15px 0;
+  border: 1px solid black;
+}
+
+.success {
+  background-color: green;
+}
+
+.error {
+  background-color: rgb(216, 168, 168);
+}
+#check {
+  width: 30px;
+  padding: 0;
+  padding-top: 5px;
+}

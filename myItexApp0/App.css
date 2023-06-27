@@ -1,0 +1,155 @@
+.container {
+  width: calc(100% - 40px);
+  overflow-x: hidden;
+  padding: 20px 20px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container .form-base {
+  width: 600px;
+  background: #ffffff;
+  box-shadow: 0px 4px 45px rgba(0, 0, 0, 0.06);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .form {
+  width: 100%;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container .form .group {
+  width: 70%;
+  margin-bottom: 10px;
+}
+.container .form input[type=text] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+.container .form input[type=submit] {
+  width: 100%;
+  background-color: #133b5c;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.container .form input[type=submit]:hover {
+  background-color: inherit;
+  color: #133b5c;
+  border: 2px solid #133b5c;
+}
+.container .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+.container .table-wrapper table {
+  width: 120vw;
+  border-collapse: collapse;
+}
+.container .table-wrapper table th {
+  border-color: none black black black;
+  border-style: none solid solid solid;
+  border-width: 0px 0.5px 1px 0.5px;
+  width: 150px;
+  height: 25px;
+  text-align: start;
+  padding-left: 20px;
+}
+.container .table-wrapper table input[type=checkbox] {
+  margin: 0;
+  width: 100%;
+  height: 20px;
+}
+.container .table-wrapper table tfoot {
+  display: none;
+}
+.container .table-wrapper table tfoot td .pagination-wrapper {
+  position: relative;
+  width: 50px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .table-wrapper table tfoot td #pagination {
+  width: 100%;
+  height: 100%;
+  text-align: start;
+  padding-left: 10px;
+}
+.container .table-wrapper table tfoot td .pagination-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  position: absolute;
+  right: 0px;
+}
+.container .table-wrapper table tfoot td .pagination-button {
+  width: 15px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .table-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.alert-container {
+  display: block;
+  position: absolute;
+  width: 60%;
+  padding: 10px;
+  background-color: #41505d;
+  color: #ffffff;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.alert-container .header {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.alert-container .header h1 {
+  margin-left: 10px;
+}
+.alert-container .message {
+  width: 100%;
+  height: 100px;
+  background-color: #ffffff;
+  color: #133b5c;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.alert-container .message h2 {
+  margin-left: 10px;
+}/*# sourceMappingURL=App.css.map */
